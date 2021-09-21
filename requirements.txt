@@ -1,0 +1,5 @@
+django==3.2.6
+gunicorn==20.1.0
+django-heroku==0.3.1
+requests==2.26.0
+PyArabic==0.6.14

@@ -1,0 +1,50 @@
+{% extends "body.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-12">
+    <ul>
+      <li>
+        <p>
+          Kitab: {{kitab}}
+        </p>
+      </li>
+      <li>
+        <p>
+          Keyword: {{keyword}}
+        </p>
+      </li>
+      <li>
+        <p>
+          Nomor: {{id_hadits}}
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <ol class="list-group list-group-numbered">
+      {% for key, value in data.items %}
+      {% for k, e in value.items %}
+
+      {% for element in e %}
+      <li class="list-group-item">
+        <h6 class="d-inline">HR. <span class="text-capitalize">{{k}}</span> : {{element.number}}</h6>
+        <p class="text-end">
+          {{element.arab|safe}}
+        </p>
+        <hr>
+        <p class="text-shadow">
+          {{element.id|safe}}
+        </p>
+        <a href="/poster/{{key}}/{{k}}/{{element.number}}" class="btn btn-primary btn-wait">Poster</a>
+      </li>
+      {% endfor %}
+
+      {% endfor %}
+      {% endfor %}
+    </ol>
+  </div>
+</div>
+{% endblock content %}
